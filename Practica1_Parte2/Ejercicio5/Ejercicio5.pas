@@ -1,3 +1,8 @@
+// Exercise: "Realizar un programa que lea números enteros desde teclado. La lectura debe finalizar cuando se ingrese el número 100, el cual debe procesarse. Informar en pantalla:
+//              ● El número máximo leído.
+//              ● El número mínimo leído.
+//              ● La suma total de los números leídos."
+
 program Ejercicio5;
 
 var
