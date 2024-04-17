@@ -1,32 +1,31 @@
 // Exercise: "Realice un programa que lea 10 números e informe cuál fue el mayor número leído. Por ejemplo: si se lee la secuencia: 3 5 6 2 3 10 98 8 -12 9, deberá informar: El mayor número leído fue el 98"
+//              a. Modifique el programa anterior para que, además de informar el mayor número leído, se informe el número de orden, dentro de la secuencia, en el que fue leído. Por ejemplo: si se lee la misma secuencia: 3 5 6 2 3 10 98 8 -12 9, deberá informar: El mayor número leído fue el 98, en la posición 7
 
 program Ejercicio2;
 
 var
   numeros: array[1..10] of Integer;
-  i, mayor: Integer;
+  i, maximo, posicion: Integer;
 
 begin
-  // Leemos los 10 números enteros
-  writeln('Ingrese 10 numeros enteros:');
+  // Leer los 10 números
+  writeln('Ingrese 10 numeros:');
   for i := 1 to 10 do
-  begin
-    write('Numero ', i, ': ');
     readln(numeros[i]);
-  end;
-
-  // Suponemos que el primer número es el mayor
-  mayor := numeros[1];
-
-  // Buscamos el mayor número
+  
+  // Encontrar el mayor número y su posición
+  maximo := numeros[1];
+  posicion := 1;
   for i := 2 to 10 do
   begin
-    if numeros[i] > mayor then
-      mayor := numeros[i];
+    if numeros[i] > maximo then
+    begin
+      maximo := numeros[i];
+      posicion := i;
+    end;
   end;
-
-  // Mostramos el mayor número leído
-  writeln('El mayor numero leido fue el ', mayor);
-
-  readln;
+  
+  // Mostrar el resultado
+  writeln('El mayor numero leido fue el ', maximo, ', en la posicion ', posicion);
+  
 end.
